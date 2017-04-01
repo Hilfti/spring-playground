@@ -1,10 +1,7 @@
 package com.example;
 
 import org.springframework.util.MultiValueMap;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -12,8 +9,9 @@ import java.util.List;
  * Created by trainer19 on 4/1/17.
  */
 @RestController
+@RequestMapping("/math")
 public class MathService {
-    @GetMapping("/math/calculate")
+    @GetMapping("/calculate")
     public double compute(@RequestParam(required = false, value = "operation", defaultValue = "add") String operation, @RequestParam double x, @RequestParam double y ){
         double result = 0;
         if(operation.equals("add"))
@@ -27,7 +25,7 @@ public class MathService {
         return result;
     }
 
-    @PostMapping("/math/sum")
+    @PostMapping("/sum")
     public Double sum(@RequestParam MultiValueMap<String, String> querystring)
     {
         double sum = 0;
