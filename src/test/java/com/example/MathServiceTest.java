@@ -34,5 +34,10 @@ public class MathServiceTest {
         this.mvc.perform(request2)
                 .andExpect(status().isOk())
                 .andExpect(content().string("15.0"));
+
+        RequestBuilder request3 = MockMvcRequestBuilders.patch("/math/volume/3/4/5");
+        this.mvc.perform(request3)
+                .andExpect(status().isOk())
+                .andExpect(content().string("60.0"));
     }
 }

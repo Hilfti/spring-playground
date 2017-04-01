@@ -11,6 +11,13 @@ import java.util.List;
 @RestController
 @RequestMapping("/math")
 public class MathService {
+
+    @RequestMapping("/volume/{length}/{width}/{height}")
+    public double calcVolume(@PathVariable double length,@PathVariable double width,@PathVariable double height)
+    {
+        return length*width*height;
+    }
+
     @GetMapping("/calculate")
     public double compute(@RequestParam(required = false, value = "operation", defaultValue = "add") String operation, @RequestParam double x, @RequestParam double y ){
         double result = 0;
