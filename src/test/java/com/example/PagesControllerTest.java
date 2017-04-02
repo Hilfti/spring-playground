@@ -29,6 +29,6 @@ public class PagesControllerTest {
         RequestBuilder request = MockMvcRequestBuilders.get("/math/pi");
         this.mvc.perform(request)
                 .andExpect(status().isOk())
-               .andExpect(content().string("3.141592653589793"));
+                .andExpect(content().string("3.141592653589793"));
     }
 }
