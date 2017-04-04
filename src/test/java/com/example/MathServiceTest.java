@@ -91,10 +91,5 @@ public class MathServiceTest {
                 .andExpect(status().isOk())
                 .andExpect(content().string("4.0*6.0 = 24.0"));
 
-
-
-
-
-
     }
 }
