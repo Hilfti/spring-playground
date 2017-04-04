@@ -79,7 +79,7 @@ public class FlightCommonCode {
     }
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-     static class Person {
+      static class Person {
         private String firstName;
         private String lastName;
 
