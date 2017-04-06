@@ -22,8 +22,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * Created by trainer19 on 4/4/17.
  */
 @RunWith(SpringRunner.class)
-@WebMvcTest(TicketTotal.class)
-public class TicketTestJsonString {
+@WebMvcTest(FlightController.class)
+public class FlightTicketPriceTest {
     @Autowired
     private MockMvc mvc;
 
@@ -57,7 +57,7 @@ public class TicketTestJsonString {
                 .andExpect(content().string("{\"result\":350}"));
     }
 
- //**************************Test using Gson*********************************
+    //**************************Test using Gson*********************************
 
     private Gson gson = new GsonBuilder().create();
 
@@ -150,7 +150,4 @@ public class TicketTestJsonString {
     }
 
 }
-
-
-
 
